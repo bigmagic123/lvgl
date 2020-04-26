@@ -1,0 +1,10 @@
+from building import *
+
+cwd = GetCurrentDir()
+src = Glob('*.c') + Glob('*.cpp')+ Glob('*.a')
+
+CPPPATH = [cwd, str(Dir('#'))]
+
+group = DefineGroup('lv_hal', src, depend = [''],CPPPATH = CPPPATH)
+
+Return('group')
